@@ -1,5 +1,4 @@
 // main.js
-
 const form = document.querySelector(".form");
 const longUrlInput = form.querySelector("input[name='longUrl']");
 const customAliasInput = form.querySelector("input[name='customAlias']");
