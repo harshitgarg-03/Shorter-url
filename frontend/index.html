@@ -4,25 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shorter URL</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="container">
+
+    <!-- Header -->
     <header class="header">
       <h1>Shorter<span>URL</span></h1>
       <p>Turn long, messy links into clean, shareable URLs.</p>
     </header>
 
+    <!-- Card -->
     <main class="card">
-      <form class="form">
+
+      <!-- Form -->
+      <form class="form" id="shortenForm" autocomplete="off">
+
         <div class="input-group">
-          <input type="url" name="longUrl" placeholder="Enter your long URL here..." required>
-          <button type="submit" class="btn">Shorten</button>
+          <label for="longUrl" class="sr-only">Long URL</label>
+          <input
+            type="url"
+            id="longUrl"
+            name="longUrl"
+            placeholder="Enter your long URL here..."
+            required
+          />
+
+          <button type="submit" class="btn" id="shortenBtn">
+            Shorten
+          </button>
         </div>
+
         <div class="extras">
-          <input type="text" name="customAlias" placeholder="Custom alias (optional)">
-          <select name="expiry">
+          <label for="customAlias" class="sr-only">Custom Alias</label>
+          <input
+            type="text"
+            id="customAlias"
+            name="customAlias"
+            placeholder="Custom alias (optional)"
+          />
+
+          <label for="expiry" class="sr-only">Expiry</label>
+          <select id="expiry" name="expiry">
             <option value="">No expiry</option>
             <option value="1d">1 Day</option>
             <option value="7d">7 Days</option>
@@ -31,23 +61,52 @@
         </div>
       </form>
 
-      <section class="result">
+      <!-- Result -->
+      <section class="result" id="resultSection">
         <h2>Your Shortened URL</h2>
+
         <div class="result-box">
-          <input type="text" value="https://sho.rt/abc123" readonly>
-          <button class="copy-btn">Copy</button>
+          <input
+            type="text"
+            id="shortUrl"
+            value="https://sho.rt/abc123"
+            readonly
+          />
+          <button class="copy-btn" id="copyBtn">Copy</button>
         </div>
-        <p class="original-url">Original: https://example.com/long/ugly/link</p>
+
+        <p class="original-url" id="originalUrl">
+          Original: https://example.com/long/ugly/link
+        </p>
       </section>
+
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
       <p>© <span id="year"></span> ShorterURL • Simple. Clean. Fast.</p>
     </footer>
+
   </div>
 
+  <!-- Screen reader only utility -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <!-- JS hooks -->
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
   <script src="main.js"></script>
