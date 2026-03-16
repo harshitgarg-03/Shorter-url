@@ -19,7 +19,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  background: linear-gradient(135deg, #a8d4ff, #0688fa);
   color: var(--text);
 }
 
@@ -117,7 +117,7 @@ body {
 .extras select {
   flex: 1;
   min-width: 150px;
-  padding: 12px 14px;
+  padding: 18px 14px;
   border-radius: var(--radius);
   border: 1px solid transparent;
   font-size: 0.9rem;
