@@ -5,7 +5,9 @@ import shortId from "shortid"
 export const urlSection = async (req, res) => {
 
     const { originalurl } = req.body
-
+     
+    console.log( "abc ", originalurl);
+    
     try {
         // const existUrl = await URL.findOne({ originalurl })
         // if (existUrl) return res.status(400).json({
